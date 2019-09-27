@@ -10,6 +10,10 @@ class Course extends Model
     const PENDING = 2;
     const REJECTED = 3;
 
+    public function pathAttachment () {
+		return "/images/courses/" . $this->picture;
+	}
+
     public function category () {
         return $this->belongsTo(Category::class)->select('id','name');
     }
