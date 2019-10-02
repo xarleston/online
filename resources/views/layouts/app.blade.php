@@ -20,9 +20,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
     @include('partials.navigation')
+
+    @yield('jumbotron')
+    
     <div id="app">
         <main class="py-4">
             @if(session('message'))
@@ -38,5 +42,6 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
 </body>
 </html>

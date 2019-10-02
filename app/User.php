@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Billable;
 
     protected static function boot () {
 		parent::boot();
@@ -42,6 +43,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    public function pathAttachment () {
+    	return "/images/users/" . $this->picture;
+    }
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
