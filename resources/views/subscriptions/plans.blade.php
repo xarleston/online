@@ -27,7 +27,7 @@
                             "product" => [
                                 "name" => __("Suscripción"),
                                 "description" => __("Mensual"),
-                                "type" => "monthly",
+                                "type" => "plan_FuN4IqHIrDu5a0",
                                 "amount" => 999,99
                             ]
                         ])
